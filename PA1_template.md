@@ -1,5 +1,10 @@
+---
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  html_document:
+    keep_md: yes
+---
 # Reproducible Research: Peer Assessment 1
-
 
 ## Loading and preprocessing the data
 
@@ -35,7 +40,7 @@ Below is a histogram of the total number of steps taken each day.
 hist(stepsByDate$steps, main = "Histogram of Total Number of Steps Taken Each Day", xlab = "Total Daily Steps Taken")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 Calculating the mean and median total number of steps taken per day.
 
@@ -69,7 +74,7 @@ A time series plot of the 5-minute interval and the average number of steps take
 plot(steps ~ interval, data=stepsByTimeInterval, type="l", main = "Mean Number of Steps by Daily Time Interval", xlab="Daily 5 Minute Interval", ylab="Mean Number of Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png) 
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png) 
 
 
 ```r
@@ -136,7 +141,7 @@ stepsByDateCompleted <- aggregate(steps ~ date, data = completedDataset, sum)
 hist(stepsByDateCompleted$steps, main = "Histogram of Total Number of Steps Taken Each Day", xlab = "Total Daily Steps Taken")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 Calculating the mean and median total number of steps taken per day for the activity data with completed missing values.
 
@@ -189,4 +194,4 @@ stepsByTimeIntervalCompleted <- aggregate(steps ~ interval + day, data = complet
 xyplot(steps ~ interval | factor(day), data = stepsByTimeIntervalCompleted, aspect = 1/2, type = "l")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png) 
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png) 
